@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.bascker.framework</groupId>
+  <artifactId>framework-base</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>spring-framework</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <properties>
+    <framework.version>1.0-SNAPSHOT</framework.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- maven.plugin -->
+    <maven.compiler.version>3.7.0</maven.compiler.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.tomcat7.version>2.2</maven.tomcat7.version>
+    <maven.tomcat7.path>/</maven.tomcat7.path>
+    <maven.tomcat7.port>80</maven.tomcat7.port>
+    <maven.tomcat7.encode>UTF-8</maven.tomcat7.encode>
+
+    <commons.lang3.version>3.4</commons.lang3.version>
+
+    <slf4j.version>1.7.21</slf4j.version>
+    <slf4j.api.version>${slf4j.version}</slf4j.api.version>
+    <slf4j.log4j12.version>${slf4j.version}</slf4j.log4j12.version>
+    <log4j.version>1.2.17</log4j.version>
+
+    <jackson.version>2.7.3</jackson.version>
+  </properties>
+
+  <dependencies>
+    <!-- commons -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons.lang3.version}</version>
+    </dependency>
+
+    <!--log-->
+    <!--slf4j-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.api.version}</version>
+    </dependency>
+
+    <!--slf4j + log4j-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.log4j12.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- jackson -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>springmvc</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven.compiler.version}</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${maven.tomcat7.version}</version>
+          <configuration>
+            <path>${maven.tomcat7.path}</path>
+            <port>${maven.tomcat7.port}</port>
+            <server>tomcat7</server>
+            <uriEncoding>${maven.tomcat7.encode}</uriEncoding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
