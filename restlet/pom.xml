@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!-- 核心包 -->
         <dependency>
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet</artifactId>

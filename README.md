@@ -6,6 +6,8 @@
 项目结构约定：以 maven 来组织项目, 每个案例以 module 形式存在.
 ```
 framework-base
-|- spring- framework            # 存放 spring 系列框架
+|- spring-framework             # 存放 spring 系列框架
     |- spring-mvc               # SpringMVC 环境搭建
+    |- spring                   # spring 环境
+|- restlet                      # restlet 框架
 ```
