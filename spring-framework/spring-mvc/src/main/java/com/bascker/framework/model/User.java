@@ -1,7 +1,5 @@
 package com.bascker.framework.model;
 
-import com.bascker.framework.util.UserFactory;
-
 /**
  * User Model
  *
@@ -15,14 +13,6 @@ public class User {
     private Sex sex;
 
     public User() {}
-
-    public User(final String name) {
-        this.name = name;
-    }
-
-    public User build(final String name) {
-        return UserFactory.getInstance().createUser(name);
-    }
 
     private User(final Builder builder) {
         this.id = builder.id;

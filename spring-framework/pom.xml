@@ -13,7 +13,7 @@
     <artifactId>spring-framework</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springmvc</module>
+        <module>spring-mvc</module>
         <module>spring</module>
     </modules>
 
