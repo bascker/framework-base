@@ -18,7 +18,7 @@
     </properties>
 
     <dependencies>
-        <!-- 核心包 -->
+        <!-- 核心包(必选) -->
         <dependency>
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet</artifactId>
@@ -31,6 +31,22 @@
             <artifactId>org.restlet.ext.jackson</artifactId>
             <version>${restlet-version}</version>
         </dependency>
+
+        <!-- 用于将应用部署到 Tomcat 服务器 -->
+        <dependency>
+            <groupId>org.restlet.jee</groupId>
+            <artifactId>org.restlet.ext.servlet</artifactId>
+            <version>${restlet-version}</version>
+        </dependency>
+
+        <!-- restlet.ext.servlet 依赖 jar -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
