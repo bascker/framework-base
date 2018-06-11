@@ -7,29 +7,26 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ResourceException;
 
+import java.util.List;
+
 /**
- * User Resource
+ * Users Resource
  *
  * @author bascker
  */
-public class UserResource extends UserBaseResource {
+public class UsersResource extends UserBaseResource {
 
     private UserDao userDao;
 
-    private String userId;
-
     @Override
     protected void doInit() throws ResourceException {
-        // 从 uri template "/users/{userId}" 中获取 userId 属性值
-        userId = (String) getRequest().getAttributes().get("userId");
-
         userDao = getDao();
     }
 
     @Get
-    public Representation query() {
-        final JacksonRepresentation<User> representation = new JacksonRepresentation<>(userDao.query(userId));
-        return representation;
+    public Representation list() {
+        final List<User> users = userDao.list();
+        return new JacksonRepresentation<>(users);
     }
 
 }
