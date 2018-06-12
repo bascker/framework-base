@@ -14,7 +14,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <restlet-version>2.3.12</restlet-version>
+        <restlet.version>2.3.12</restlet.version>
+        <servlet.version>3.1.0</servlet.version>
     </properties>
 
     <dependencies>
@@ -22,28 +23,28 @@
         <dependency>
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet</artifactId>
-            <version>${restlet-version}</version>
+            <version>${restlet.version}</version>
         </dependency>
 
         <!-- restlet 推荐使用 jackson 处理 JSON -->
         <dependency>
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet.ext.jackson</artifactId>
-            <version>${restlet-version}</version>
+            <version>${restlet.version}</version>
         </dependency>
 
         <!-- 用于将应用部署到 Tomcat 服务器 -->
         <dependency>
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet.ext.servlet</artifactId>
-            <version>${restlet-version}</version>
+            <version>${restlet.version}</version>
         </dependency>
 
         <!-- restlet.ext.servlet 依赖 jar -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${servlet.version}</version>
             <scope>provided</scope>
         </dependency>
 
