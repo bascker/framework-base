@@ -3,5 +3,24 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Restlet Web Application</display-name>
+
+  <!--
+    Web 项目启动时将 context-param 定义转为 key-value 对，交给 ServerServlet 进行初始化
+    Note：param-name 中是全小写, key 值可查看 ServerServlet 类中的定义
+   -->
+  <context-param>
+    <param-name>org.restlet.application</param-name>
+    <param-value>com.bascker.framework.server.UserApplication</param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>RestletServlet</servlet-name>
+    <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RestletServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
 </web-app>

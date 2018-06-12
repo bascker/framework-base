@@ -1,6 +1,6 @@
-package com.baskcer.framework;
+package com.bascker.framework;
 
-import com.baskcer.framework.server.UserApplication;
+import com.bascker.framework.server.UserApplication;
 import org.restlet.Component;
 import org.restlet.data.Protocol;
 

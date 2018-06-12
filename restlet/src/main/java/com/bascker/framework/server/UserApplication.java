@@ -1,7 +1,7 @@
-package com.baskcer.framework.server;
+package com.bascker.framework.server;
 
-import com.baskcer.framework.dao.UserDao;
-import com.baskcer.framework.dao.impl.UserDaoImpl;
+import com.bascker.framework.dao.UserDao;
+import com.bascker.framework.dao.impl.UserDaoImpl;
 import org.restlet.Application;
 import org.restlet.Context;
 import org.restlet.Restlet;

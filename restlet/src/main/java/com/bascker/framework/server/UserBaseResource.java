@@ -1,6 +1,6 @@
-package com.baskcer.framework.server;
+package com.bascker.framework.server;
 
-import com.baskcer.framework.dao.UserDao;
+import com.bascker.framework.dao.UserDao;
 import org.restlet.resource.ServerResource;
 
 /**

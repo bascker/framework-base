@@ -1,4 +1,4 @@
-package com.baskcer.framework.model;
+package com.bascker.framework.model;
 
 /**
  * User

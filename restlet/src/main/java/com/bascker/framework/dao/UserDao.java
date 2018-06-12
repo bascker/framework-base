@@ -1,6 +1,6 @@
-package com.baskcer.framework.dao;
+package com.bascker.framework.dao;
 
-import com.baskcer.framework.model.User;
+import com.bascker.framework.model.User;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;

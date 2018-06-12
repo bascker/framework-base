@@ -1,7 +1,7 @@
-package com.baskcer.framework.dao.impl;
+package com.bascker.framework.dao.impl;
 
-import com.baskcer.framework.dao.UserDao;
-import com.baskcer.framework.model.User;
+import com.bascker.framework.dao.UserDao;
+import com.bascker.framework.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

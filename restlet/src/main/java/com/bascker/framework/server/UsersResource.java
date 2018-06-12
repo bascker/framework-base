@@ -1,7 +1,7 @@
-package com.baskcer.framework.server;
+package com.bascker.framework.server;
 
-import com.baskcer.framework.dao.UserDao;
-import com.baskcer.framework.model.User;
+import com.bascker.framework.dao.UserDao;
+import com.bascker.framework.model.User;
 import org.restlet.ext.jackson.JacksonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
