@@ -10,4 +10,7 @@ framework-base
     |- spring-mvc               # SpringMVC 环境搭建
     |- spring                   # spring 环境
 |- restlet                      # restlet 框架
+|- combination-framework        # 组合框架
+    |- sr                       # spring & restlet
+    |- ssm                      # spring & springmvc & mybatis
 ```
