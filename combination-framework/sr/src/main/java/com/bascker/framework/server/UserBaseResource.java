@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 
 /**
- * User Base Resource
+ * User Base Resource: ServerResource 应该是原型 Bean
  *
  * @author bascker
  */

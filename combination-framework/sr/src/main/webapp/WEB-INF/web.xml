@@ -5,18 +5,13 @@
 <web-app>
   <display-name>Spring-Restlet Web Application</display-name>
 
-  <!--<context-param>-->
-    <!--<param-name>contextConfigLocation</param-name>-->
-    <!--<param-value>classpath*:applicationContext.xml</param-value>-->
-  <!--</context-param>-->
-
-  <!--<listener>-->
-    <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-  <!--</listener>-->
-
   <servlet>
     <servlet-name>restlet</servlet-name>
     <servlet-class>org.restlet.ext.spring.RestletFrameworkServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath*:restlet-servlet.xml</param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
