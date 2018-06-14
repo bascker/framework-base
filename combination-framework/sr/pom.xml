@@ -15,7 +15,6 @@
 
     <properties>
         <restlet.version>2.3.12</restlet.version>
-        <restlet.ext.spring.version>2.0-M3</restlet.ext.spring.version>
         <spring.version>4.3.8.RELEASE</spring.version>
         <commons.logging.version>1.1.1</commons.logging.version>
         <servlet.version>3.1.0</servlet.version>
@@ -43,17 +42,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.restlet</groupId>
+            <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet.ext.spring</artifactId>
-            <version>${restlet.ext.spring.version}</version>
-        </dependency>
-
-        <!-- Spring -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
+            <version>${restlet.version}</version>
         </dependency>
 
         <dependency>
@@ -62,6 +53,14 @@
             <version>${commons.logging.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>

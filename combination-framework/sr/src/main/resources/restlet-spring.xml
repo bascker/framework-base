@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
-                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+    default-autowire="byName">
 
-    <bean id="component" class="org.restlet.ext.spring.SpringComponent">
-        <property name="defaultTarget" ref="restRoute"/>
+    <bean id="restletComponent" class="org.restlet.ext.spring.SpringComponent">
+        <property name="defaultTarget" ref="userApplication"/>
     </bean>
 
-    <bean id="restRoute" class="org.restlet.ext.spring.SpringRouter">
-        <property name="attachments">
-            <map>
-                <entry key="/users">
-                    <bean class="org.restlet.ext.spring.SpringFinder">
-                        <lookup-method name="createResource" bean="usersResource"/>
-                    </bean>
-                </entry>
-            </map>
-        </property>
+    <bean id="userApplication" class="com.bascker.framework.server.UserApplication" lazy-init="true" autowire="default">
+        <property name="root" ref="router"/>
     </bean>
 
-    <bean id="usersResource" class="com.bascker.framework.server.UsersResource"/>
+    <bean id="usersResource" class="com.bascker.framework.server.UsersResource" scope="prototype"/>
+
+    <!-- 配置路由地址 -->
+    <bean id="router" class="org.restlet.ext.spring.SpringRouter" lazy-init="true" autowire="default"></bean>
+
+    <bean name="/users" class="com.bascker.framework.server.UsersResource" scope="prototype" lazy-init="true"/>
 
 </beans>

@@ -1,21 +1,20 @@
 package com.bascker.framework.server;
 
 import com.bascker.framework.dao.UserDao;
-import com.bascker.framework.model.User;
 import org.restlet.ext.jackson.JacksonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ResourceException;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * User Resource
  *
  * @author bascker
  */
+@Controller
 public class UserResource extends UserBaseResource {
 
-    @Autowired
     private UserDao userDao;
 
     private String userId;
@@ -28,10 +27,14 @@ public class UserResource extends UserBaseResource {
         userDao = getDao();
     }
 
+    /**
+     * /v1/users/{userId}
+     *
+     * @return
+     */
     @Get
     public Representation query() {
-        final JacksonRepresentation<User> representation = new JacksonRepresentation<>(userDao.query(userId));
-        return representation;
+        return new JacksonRepresentation<>(userDao.query(userId));
     }
 
 }

@@ -6,7 +6,7 @@ import org.restlet.ext.jackson.JacksonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ResourceException;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
@@ -15,9 +15,9 @@ import java.util.List;
  *
  * @author bascker
  */
+@Controller
 public class UsersResource extends UserBaseResource {
 
-    @Autowired
     private UserDao userDao;
 
     @Override
@@ -25,6 +25,11 @@ public class UsersResource extends UserBaseResource {
         userDao = getDao();
     }
 
+    /**
+     * /v1/users
+     *
+     * @return
+     */
     @Get
     public Representation list() {
         final List<User> users = userDao.list();

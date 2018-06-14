@@ -1,7 +1,5 @@
 package com.bascker.framework.server;
 
-import com.bascker.framework.dao.UserDao;
-import com.bascker.framework.dao.impl.UserDaoImpl;
 import org.restlet.Application;
 import org.restlet.Context;
 import org.restlet.Restlet;
@@ -14,8 +12,6 @@ import org.restlet.routing.Router;
  */
 public class UserApplication extends Application {
 
-    private final UserDao userDao = new UserDaoImpl();
-
     @Override
     public Restlet createInboundRoot() {
         final Context context = getContext();
@@ -24,10 +20,6 @@ public class UserApplication extends Application {
         router.attach("/users/{userId}", UserResource.class);
 
         return router;
-    }
-
-    public UserDao getDao() {
-        return userDao;
     }
 
 }

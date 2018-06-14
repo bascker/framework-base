@@ -4,6 +4,7 @@ import com.bascker.framework.dao.UserDao;
 import com.bascker.framework.model.User;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,11 @@ import java.util.List;
  *
  * @author bascker
  */
-@Repository
+@Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
-    static {
+    @PostConstruct
+    public void init() {
         DB.put("1", new User("1", "bascker"));
         DB.put("2", new User("2", "paul"));
         DB.put("3", new User("3", "lisa"));
