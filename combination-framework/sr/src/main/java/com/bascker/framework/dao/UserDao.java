@@ -17,4 +17,6 @@ public interface UserDao {
 
     User query(final String id);
 
+    void save(final User user);
+
 }

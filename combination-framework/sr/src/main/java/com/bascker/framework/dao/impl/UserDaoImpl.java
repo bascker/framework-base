@@ -35,4 +35,9 @@ public class UserDaoImpl implements UserDao {
     public User query(final String id) {
         return DB.getOrDefault(id, null);
     }
+
+    @Override
+    public void save(final User user) {
+        DB.put(user.getId(), user);
+    }
 }
